@@ -12,7 +12,7 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class AgeSlider extends JFrame implements ActionListener// , Observer
+public class AgeSlider extends JFrame implements ActionListener,Observer
 {
 	private static final long serialVersionUID = 1L;
 	protected JButton qbutton;
@@ -26,8 +26,9 @@ public class AgeSlider extends JFrame implements ActionListener// , Observer
 		super(title);
 
 		aperson = p;
+		aperson.attach(this);
 
-		// register as an observer of person
+		// register as an Observer of person
 		// p.attach(this);
 
 		qbutton = new JButton("Quit");
